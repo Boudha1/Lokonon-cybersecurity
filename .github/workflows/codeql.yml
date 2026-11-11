@@ -7,8 +7,6 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    - cron: '35 0 * * 6'
 
 permissions:
   contents: read
@@ -19,20 +17,9 @@ jobs:
     name: Analyze JavaScript
     runs-on: ubuntu-latest
 
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Verify JavaScript source files
-        run: |
-          echo "Fichiers suivis par Git :"
-          git ls-files
-          echo "Verification de script.js :"
-          ls -lah script.js
-          wc -c script.js
-          head -c 200 script.js
-          echo
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v4
@@ -43,5 +30,3 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v4
-
-     
