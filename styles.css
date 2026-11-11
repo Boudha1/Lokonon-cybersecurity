@@ -6,3 +6,7 @@ button:focus-visible {
     outline: 3px solid #80e1d1;
     outline-offset: 4px;
 }
+/* Décalage des sections sous le menu */
+html {
+    scroll-padding-top: 90px;
+}
