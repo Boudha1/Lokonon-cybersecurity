@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lokonon-cybersecurity.pages.dev/sitemap.xml
